@@ -4,13 +4,13 @@
 <script>
 	
 	tests({
-		'If object is prototype of other object, return true': function () {
+		'If first parameter is prototype of second parameter, return true': function () {
 			var dog = {fetch: 'lets fetch'};
 			var myDog = Object.create(dog);
 			eq(isPrototypeOf(dog, myDog), true);
 		},
 
-		'If object is not prototype of other object, return false': function () {
+		'If first parameter is not a prototype of second parameter, return false': function () {
 			var dog = {fetch: 'lets fetch'};
 			var empty = Object.create(null);
 			eq(isPrototypeOf(dog, empty), false);
