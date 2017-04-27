@@ -1,0 +1,35 @@
+<script src="isPrototypeOf.js"></script>
+<script src="simpleTest.js"></script>
+
+<script>
+	
+	tests({
+		'If object is prototype of other object, return true': function () {
+			var dog = {fetch: 'lets fetch'};
+			var myDog = Object.create(dog);
+			eq(isPrototypeOf(dog, myDog), true);
+		},
+
+		'If object is not prototype of other object, return false': function () {
+			var dog = {fetch: 'lets fetch'};
+			var empty = Object.create(null);
+			eq(isPrototypeOf(dog, empty), false);
+		},
+
+		'It should return true when checking if Object.prototype is prototype of object': function () {
+			var dog = {fetch: 'lets fetch'};
+			var myDog = Object.create(dog);
+			eq(isPrototypeOf(Object.prototype, myDog), true);
+		},
+
+		'It will be able to check any number of prototype links': function () {
+			var canine = {bark: "barkbark"};
+			var dog = Object.create(canine);
+			var myDog = Object.create(dog);
+			eq(isPrototypeOf(canine, myDog), true);
+		}
+
+	});
+
+</script>
+
