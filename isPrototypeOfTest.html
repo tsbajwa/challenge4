@@ -16,7 +16,7 @@
 			eq(isPrototypeOf(dog, empty), false);
 		},
 
-		'It should return true when checking if Object.prototype is prototype of object': function () {
+		'It should return true if the first parameter Object.prototype is a prototype of second parameter': function () {
 			var dog = {fetch: 'lets fetch'};
 			var myDog = Object.create(dog);
 			eq(isPrototypeOf(Object.prototype, myDog), true);
