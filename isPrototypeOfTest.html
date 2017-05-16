@@ -3,6 +3,21 @@
 
 <script>
 	
+	
+	var canine = {
+	bark: function() {
+		console.log('bark');
+	}
+	};
+
+	var dog = Object.create(canine);
+	dog.fetch = function() {
+	console.log('fetch');
+	};
+
+	var myDog = Object.create(dog);
+	var empty = Object.create(null);
+	
 	tests({
 		'If first parameter is prototype of second parameter, return true': function () {
 			var dog = {fetch: 'lets fetch'};
